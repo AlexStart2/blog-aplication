@@ -33,7 +33,7 @@ function NavigationBar() {
           <Nav.Link href='/' ><img src={logo} alt="Turn it Green" className="logotip" /></Nav.Link>
           <div id='nav-opt' className='navbar-options'>
             <Nav.Link href='/' className={blocks}>Home</Nav.Link>
-            <Nav.Link href='/Search' className={blocks}>Search</Nav.Link>
+            <Nav.Link href='/search' className={blocks}>Search</Nav.Link>
             <Nav.Link className={blocks+' last'}><button className='GetInTouchButton' onClick={()=>{Navigate('#')}}>Get in Touch</button></Nav.Link>
           </div>
           <button onClick={()=>{NavBarMobile()}} className='Menu'><img src={menuSVG} alt='menuButton' /></button>

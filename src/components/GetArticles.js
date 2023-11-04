@@ -7,7 +7,7 @@ export function GetArticles() {
     const [allArticles,setAllArticles]=useState([]);
 
     async function getArticle(){
-      fetch('http://localhost:5001/get-all-articles',{
+      fetch('https://blog-aplication-invu.onrender.com/get-all-articles',{
         method:"GET",
         
       }).then((res)=>res.json()).then((data)=>{

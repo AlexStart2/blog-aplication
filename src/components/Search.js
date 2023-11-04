@@ -91,11 +91,6 @@ function Search() {
         })}
       </div>
 
-
-
-
-
-
       <Footer />
     </>
   );

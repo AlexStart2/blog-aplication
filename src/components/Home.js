@@ -60,7 +60,7 @@ function Home() {
 
 
 
-    const response = await fetch('http://localhost:5001/api/upload-article', {
+    const response = await fetch('https://blog-aplication-invu.onrender.com/api/upload-article', {
       method: 'POST',
       body: formData
     });
@@ -80,7 +80,7 @@ function Home() {
     artId.append('articleId', event);
 
 
-    const response = await fetch('http://localhost:5001/api/delete-article', {
+    const response = await fetch('https://blog-aplication-invu.onrender.com/api/delete-article', {
       method: 'DELETE',
       body:artId
     });
