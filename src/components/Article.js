@@ -4,10 +4,10 @@ import 'bootstrap';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
 import { useParams } from 'react-router-dom';
-import facebookIcon from './Images/icons8-facebook-100.png';
-import linkedInIcon from './Images/icons8-linkedin-100.png';
-import instagramIcon from './Images/icons8-instagram-96.png';
-import twitterIcon from './Images/icons8-twitterx-100.png';
+import facebookIcon from './Images/icons8-facebook-48.png';
+import linkedInIcon from './Images/icons8-linkedin-48.png';
+import instagramIcon from './Images/icons8-instagram-48.png';
+import twitterIcon from './Images/icons8-twitterx-48.png';
 import { formatDate } from './GetArticles';
 
 
@@ -34,7 +34,9 @@ function Article({ content }) {
         if (data._id === articleId) {
           return (
             <div key={data._id} className='ArticlePage'>
-              <img className='ArticlePageImage' src={`https://drive.google.com/uc?id=${data.ImageId}`} alt={data.Title} />
+              <div className='ImageContainer'>
+                <img className='ArticlePageImage' src={`https://drive.google.com/uc?id=${data.ImageId}`} alt={data.Title} />
+              </div>
               <div className='ArticlePageTitle'>
                 <p className='ArticleTitle'>{data.Title}</p>
               </div>

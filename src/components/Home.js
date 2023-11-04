@@ -10,7 +10,6 @@ import JoditEditor from 'jodit-react';
 
 
 
-
 function Home() {
   const RecentArticles = GetArticles();
   const Navigate = useNavigate();
@@ -73,25 +72,24 @@ function Home() {
     window.location.reload();
   }
 
-  // const handleDelete = async (e) => {
-  //   console.log(e);
-  //   try {
-  //     const response = await fetch(`http://localhost:5001/api/delete-article/${e}`, {
-  //       method: 'DELETE',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //     });
 
-  //     if (response.ok) {
-  //       console.log('Article deleted successfully');
-  //     } else {
-  //       console.error('Error deleting the article');
-  //     }
-  //   } catch (error) {
-  //     console.error('Error deleting the article:', error);
-  //   }
-  // };
+
+  async function DeleteArticle (event){
+    console.log(event);
+    const artId = new FormData();
+    artId.append('articleId', event);
+
+
+    const response = await fetch('http://localhost:5001/api/delete-article', {
+      method: 'DELETE',
+      body:artId
+    });
+    const responseBody = await response.text();
+    console.log(responseBody); // Log the response body to see what's returned
+    const data = JSON.parse(responseBody);
+    alert(data);
+    window.location.reload();
+  }
   
 
 
@@ -160,9 +158,9 @@ function Home() {
           {RecentArticles.map(data => {
 
             return (
+              <div key={data._id} className='ArticleCard'>
 
-
-              <div key={data._id} className='Articles' onClick={() => Navigate(`/article/${data._id}`)}>
+              <div className='Articles' onClick={() => Navigate(`/article/${data._id}`)}>
                 <div className='img-container'>
                   <img className='ArticlesImages' src={`https://drive.google.com/uc?id=${data.ImageId}`} alt={data.Title} />
                 </div>
@@ -171,8 +169,8 @@ function Home() {
                 <div className='Content Date'>{formatDate(data.createdAt)}</div>
 
               </div>
-
-
+              {data._id==='65453f816393b17b25707818'? <></>:<button id={`${data._id}`} onClick={()=>{DeleteArticle(data._id)}} className='DeleteArticle'>Delete</button>
+}              </div>
             )
           })}
         </div>
