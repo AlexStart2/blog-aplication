@@ -74,7 +74,7 @@ function Home() {
 
 
 
-  async function DeleteArticle (event){
+  async function DeleteArticle(event) {
     console.log(event);
     const artId = new FormData();
     artId.append('articleId', event);
@@ -82,7 +82,7 @@ function Home() {
 
     const response = await fetch('https://blog-aplication-invu.onrender.com/api/delete-article', {
       method: 'DELETE',
-      body:artId
+      body: artId
     });
     const responseBody = await response.text();
     console.log(responseBody); // Log the response body to see what's returned
@@ -90,7 +90,7 @@ function Home() {
     alert(data);
     window.location.reload();
   }
-  
+
 
 
   return (
@@ -133,9 +133,9 @@ function Home() {
           </div>
 
           <div className='Preview'>
-          <h2>Preview</h2>
+            <h2>Preview</h2>
 
-            
+
             <div className='Articles'>
 
               <div className='img-container'>
@@ -145,7 +145,7 @@ function Home() {
               <div className='Content' dangerouslySetInnerHTML={{ __html: inputContent.slice(0, 400) + "\n..." }}></div>
               <div className='Content Date'>08 May 2023</div>
             </div>
-            </div>
+          </div>
 
 
 
@@ -153,24 +153,23 @@ function Home() {
 
         <h1 className='B-Blog'>Blog</h1>
         <div className='Blog'>
-          
-
           {RecentArticles.map(data => {
 
             return (
               <div key={data._id} className='ArticleCard'>
 
-              <div className='Articles' onClick={() => Navigate(`/article/${data._id}`)}>
-                <div className='img-container'>
-                  <img className='ArticlesImages' src={`https://drive.google.com/uc?id=${data.ImageId}`} alt={data.Title} />
-                </div>
-                <h1 className='Title'>{data.Title}</h1>
-                <div className='Content' dangerouslySetInnerHTML={{ __html: data.Content.slice(0, 400) + "\n..." }}></div>
-                <div className='Content Date'>{formatDate(data.createdAt)}</div>
+                <div className='Articles' onClick={() => Navigate(`/article/${data._id}`)}>
+                  <div className='img-container'>
+                    <img className='ArticlesImages' src={`https://drive.google.com/uc?id=${data.ImageId}`}  sizes="(min-width: 1200px) 1200px, (min-width: 600px) 600px, 300px" alt={data.Title} />
+                  </div>
+                  <h1 className='Title'>{data.Title}</h1>
+                  <div className='Content' dangerouslySetInnerHTML={{ __html: data.Content.slice(0, 400) + "\n..." }}></div>
+                  <div className='Content Date'>{formatDate(data.createdAt)}</div>
 
+                </div>
+                {data._id === '65453f816393b17b25707818' ? <></> : <button id={`${data._id}`} onClick={() => { DeleteArticle(data._id) }} className='DeleteArticle'>Delete</button>
+                }
               </div>
-              {data._id==='65453f816393b17b25707818'? <></>:<button id={`${data._id}`} onClick={()=>{DeleteArticle(data._id)}} className='DeleteArticle'>Delete</button>
-}              </div>
             )
           })}
         </div>
