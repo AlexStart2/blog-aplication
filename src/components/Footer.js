@@ -5,10 +5,7 @@ import 'bootstrap';
 
 
 
-
-
 function Footer() {
-
 
 
   return (
@@ -20,15 +17,15 @@ function Footer() {
 
             © [Year]-[Current Year] [Your Blog Name]. All rights reserved.<br /><br />
 
-            All content on this blog web app, including text, images, graphics, and other 
-            materials, is the property of [Your Name] and is protected by copyright laws. You may not 
-            reproduce, distribute, display, or modify any of the content without the express written permission of [Your Name].<br/>
+            All content on this blog web app, including text, images, graphics, and other
+            materials, is the property of [Your Name] and is protected by copyright laws. You may not
+            reproduce, distribute, display, or modify any of the content without the express written permission of [Your Name].<br />
 
-            Unauthorized use or reproduction of the content may violate copyright, trademark, 
-            and other laws. If you wish to use or license any content from this blog, please contact 
+            Unauthorized use or reproduction of the content may violate copyright, trademark,
+            and other laws. If you wish to use or license any content from this blog, please contact
             [Your Contact Information] for permission.
 
-            If you have any questions or concerns about this copyright notice, please contact 
+            If you have any questions or concerns about this copyright notice, please contact
             us at [Your Contact Information].
 
           </div>

@@ -15,7 +15,6 @@ function Home() {
   const Navigate = useNavigate();
 
 
-
   const editor = useRef(null);
   const [inputImage, setImage] = useState('');
   const [inputContent, setInputContent] = useState('');
@@ -99,7 +98,6 @@ function Home() {
         <NavigationBar />
 
 
-
         <div className='StartPage'>
           <figure className='position-relative'>
             <img src={StartImage} className='StartImage' alt='HomeImage' />
@@ -147,8 +145,6 @@ function Home() {
             </div>
           </div>
 
-
-
         </div>
 
         <h1 className='B-Blog'>Blog</h1>
@@ -160,7 +156,7 @@ function Home() {
 
                 <div className='Articles' onClick={() => Navigate(`/article/${data._id}`)}>
                   <div className='img-container'>
-                    <img className='ArticlesImages' src={`https://drive.google.com/uc?id=${data.ImageId}`}  sizes="(min-width: 1200px) 1200px, (min-width: 600px) 600px, 300px" alt={data.Title} />
+                    <img className='ArticlesImages' src={`https://drive.google.com/uc?id=${data.ImageId}`} sizes="(min-width: 1200px) 1200px, (min-width: 600px) 600px, 300px" alt={data.Title} />
                   </div>
                   <h1 className='Title'>{data.Title}</h1>
                   <div className='Content' dangerouslySetInnerHTML={{ __html: data.Content.slice(0, 400) + "\n..." }}></div>
@@ -173,12 +169,6 @@ function Home() {
             )
           })}
         </div>
-
-
-
-
-
-
 
         <Footer />
       </div>

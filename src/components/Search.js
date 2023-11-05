@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import 'bootstrap';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
-import { GetArticles,formatDate } from './GetArticles';
+import { GetArticles, formatDate } from './GetArticles';
 import { useNavigate } from 'react-router-dom';
 import SearchImage from './Images/SearchEngine.webp';
 import searchIncon from './Images/icons8-search-128.png';
@@ -39,30 +39,30 @@ function Search() {
       <NavigationBar />
 
       <div className='StartPage'>
-          <figure className='position-relative-search'>
-            <img src={SearchImage} className='SearchImage' alt='SearchImage' />
-          </figure>
-        </div>
+        <figure className='position-relative-search'>
+          <img src={SearchImage} className='SearchImage' alt='SearchImage' />
+        </figure>
+      </div>
 
 
 
       <div className='SearchFunction'>
         <div className='SearchBar'>
-        <input
-          type="text"
-          placeholder='Search'
-          value={searchQuery}
-          onChange={LookFor}
-          className='search'
-        />
-        <img src={searchIncon} alt='Search' className='SearchIcon' />
+          <input
+            type="text"
+            placeholder='Search'
+            value={searchQuery}
+            onChange={LookFor}
+            className='search'
+          />
+          <img src={searchIncon} alt='Search' className='SearchIcon' />
         </div>
       </div>
-      
+
 
       <div className='Blog'>
 
-        {searchQuery?Display.map(data => {
+        {searchQuery ? Display.map(data => {
 
           return (
             <div key={data._id} className='Articles' onClick={() => Navigate(`/article/${data._id}`)}>
@@ -75,7 +75,7 @@ function Search() {
 
             </div>
           )
-        }):Articles.map(data => {
+        }) : Articles.map(data => {
 
           return (
             <div key={data._id} className='Articles' onClick={() => Navigate(`/article/${data._id}`)}>

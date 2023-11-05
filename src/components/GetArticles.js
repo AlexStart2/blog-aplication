@@ -1,24 +1,24 @@
-import { useEffect, useState} from 'react';
-
+import { useEffect, useState } from 'react';
 
 
 export function GetArticles() {
 
-    const [allArticles,setAllArticles]=useState([]);
+  const [allArticles, setAllArticles] = useState([]);
 
-    async function getArticle(){
-      fetch('https://blog-aplication-invu.onrender.com/get-all-articles',{
-        method:"GET",
-        
-      }).then((res)=>res.json()).then((data)=>{
-      setAllArticles(data.data)})
-    }
-    useEffect(()=>{
-      getArticle();
-    },[]);
+  async function getArticle() {
+    fetch('https://blog-aplication-invu.onrender.com/get-all-articles', {
+      method: "GET",
+
+    }).then((res) => res.json()).then((data) => {
+      setAllArticles(data.data)
+    })
+  }
+  useEffect(() => {
+    getArticle();
+  }, []);
 
 
-    return allArticles;
+  return allArticles;
 
 }
 

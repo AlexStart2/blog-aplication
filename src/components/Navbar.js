@@ -8,19 +8,17 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-
-
 function NavigationBar() {
 
-  const Navigate=useNavigate();
-  const blocks='navbar-button';
+  const Navigate = useNavigate();
+  const blocks = 'navbar-button';
 
-  const NavBarMobile=()=>{
-    let o=document.getElementById('nav-opt').classList;
-    if(o.value==='navbar-options'){
+  const NavBarMobile = () => {
+    let o = document.getElementById('nav-opt').classList;
+    if (o.value === 'navbar-options') {
       console.log('show');
       o.add('active');
-    }else{
+    } else {
       o.remove('active');
     }
     console.log(o.value);
@@ -34,16 +32,11 @@ function NavigationBar() {
           <div id='nav-opt' className='navbar-options'>
             <Nav.Link href='/' className={blocks}>Home</Nav.Link>
             <Nav.Link href='/search' className={blocks}>Search</Nav.Link>
-            <Nav.Link className={blocks+' last'}><button className='GetInTouchButton' onClick={()=>{Navigate('#')}}>Get in Touch</button></Nav.Link>
+            <Nav.Link className={blocks + ' last'}><button className='GetInTouchButton' onClick={() => { Navigate('#') }}>Get in Touch</button></Nav.Link>
           </div>
-          <button onClick={()=>{NavBarMobile()}} className='Menu'><img src={menuSVG} alt='menuButton' /></button>
+          <button onClick={() => { NavBarMobile() }} className='Menu'><img src={menuSVG} alt='menuButton' /></button>
         </div>
       </Nav>
-
-
-
-
-
     </>
   );
 }

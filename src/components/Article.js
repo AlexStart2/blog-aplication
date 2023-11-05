@@ -18,16 +18,9 @@ function Article({ content }) {
 
   const postUrl = encodeURI(document.location.href);
 
-
-
-
   return (
     <>
       <NavigationBar />
-
-
-
-
 
       {content.map(data => {
 
@@ -53,9 +46,6 @@ function Article({ content }) {
                   </div>
                 </div>
               </div>
-
-
-
             </div>
           )
         } else {
